@@ -1,12 +1,4 @@
-const Pool = require("pg").Pool;
-
-const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "sallerbuyer",
-  password: "test123",
-  port: 5432,
-});
+const pool = require("../connection/db.connection");
 
 const createShop = (req, res) => {
   const { shop_name, seller_id } = req.body;
