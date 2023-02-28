@@ -16,7 +16,6 @@ const createShop = (req, res) => {
     [shop_name, seller_id],
     (err, result) => {
       if (err) {
-        console.log(err);
         throw err;
       }
       res.status(200).json({
@@ -30,7 +29,6 @@ const createShop = (req, res) => {
 const getShop = (req, res) => {
   pool.query("SELECT * FROM shop", (err, result) => {
     if (err) {
-      console.log(err);
       throw err;
     }
     res.json({

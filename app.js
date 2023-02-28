@@ -6,15 +6,23 @@ const dbBuyer = require("./buyer/buyer");
 const dbShop = require("./shop/shop");
 const dbBook = require("./book/book");
 const dbOrder = require("./order/order");
+const localtunnel = require("localtunnel");
 
 const cors = require("cors");
+
+const PORT = 8000;
 app.use(
   cors({
     origin: "*",
   })
 );
 
-const PORT = 9000;
+(async () => {
+  const tunnel = await localtunnel({ port: 8000 });
+  tunnel.url;
+
+  tunnel.on("close", () => {});
+})();
 
 dotenv.config();
 

@@ -16,7 +16,6 @@ const createBook = (req, res) => {
     [name, stock_count, shop_id],
     (err, result) => {
       if (err) {
-        console.log(err);
         throw err;
       }
       res.status(200).json({
@@ -30,7 +29,6 @@ const createBook = (req, res) => {
 const getBook = (req, res) => {
   pool.query("SELECT * FROM book", (err, result) => {
     if (err) {
-      console.log(err);
       throw err;
     }
     res.json({

@@ -16,7 +16,6 @@ const createOrder = (req, res) => {
     [count, name, address, book_id, buyer_id, shop_id],
     (err, result) => {
       if (err) {
-        console.log(err);
         throw err;
       }
       res.status(200).json({
@@ -30,7 +29,6 @@ const createOrder = (req, res) => {
 const getOrder = (req, res) => {
   pool.query("SELECT * FROM ordertbl", (err, result) => {
     if (err) {
-      console.log(err);
       throw err;
     }
     res.json({

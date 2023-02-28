@@ -16,7 +16,6 @@ const createSeller = (req, res) => {
     [seller_name, email],
     (err, result) => {
       if (err) {
-        console.log(err);
         throw err;
       }
       res.status(200).json({
@@ -30,7 +29,6 @@ const createSeller = (req, res) => {
 const getSeller = (req, res) => {
   pool.query("SELECT * FROM seller", (err, result) => {
     if (err) {
-      console.log(err);
       throw err;
     }
     res.json({

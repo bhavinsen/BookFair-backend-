@@ -16,7 +16,6 @@ const createBuyer = (req, res) => {
     [buyer_name, email],
     (err, result) => {
       if (err) {
-        console.log(err);
         throw err;
       }
       res.status(200).json({
@@ -30,7 +29,6 @@ const createBuyer = (req, res) => {
 const getBuyer = (req, res) => {
   pool.query("SELECT * FROM buyer", (err, result) => {
     if (err) {
-      console.log(err);
       throw err;
     }
     res.json({
